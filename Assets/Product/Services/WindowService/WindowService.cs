@@ -79,15 +79,17 @@ public class WindowService : MonoService
         }
 
         string assetPath = AssetPathUtil.GetWindowAssetPath(config.AssetName);
+
         Addressables.InstantiateAsync(assetPath, windowGroupComponent.transform, false).Completed += (aoh) =>
         {
+            Debug.LogWarning("111");
             WindowBaseView baseWindow = aoh.Result.GetOrAddComponent<WindowBaseView>();
             baseWindow.config = config;
 
             if (config.PauseCovered)
             {
                 LinkedList<WindowBaseView> allWindows = windowGroupComponent.GetAllWindows();
-                foreach(WindowBaseView window in allWindows)
+                foreach (WindowBaseView window in allWindows)
                 {
                     if (window.isActiveAndEnabled)
                     {
@@ -99,6 +101,7 @@ public class WindowService : MonoService
             windowGroupComponent.AddWindow(baseWindow);
             MobiusMediator mobiusMediator = aoh.Result.GetComponent<MobiusMediator>();
             mobiusMediator.windowEnum = windowEnum;
+            Debug.LogWarning("222");
         };
     }
 

@@ -14,7 +14,6 @@ public class MainMediator : MobiusMediator
 
     private void OnViewInteract(string type1, GameObject type2)
     {
-        Debug.Log(type1);
         switch (type1)
         {
             case MainWindow.CLICK_TASK:

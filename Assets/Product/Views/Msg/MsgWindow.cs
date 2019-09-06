@@ -14,8 +14,7 @@ public class MsgWindow : WindowBaseView
     public void ShowMsg(string msg)
     {
         text.text = msg;
-
-        transform.DOMoveY(30, 1.2f, false).onComplete += OnShowMsgComplete;
+        transform.DOLocalMoveY(30, 1.2f, false).onComplete += OnShowMsgComplete;
     }
 
     private void OnShowMsgComplete()
