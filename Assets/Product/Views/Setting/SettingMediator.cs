@@ -18,7 +18,7 @@ public class SettingMediator : MobiusMediator
                 windowService.CloseWindow(WindowEnum.SettingWindow);
                 break;
             case SettingWindow.CLICK_LOGOUT:
-                windowService.OpenWindow(WindowEnum.MsgWindow,"Unlock");
+                windowService.OpenWindow(WindowEnum.MsgWindow, "UnLock");
                 break;
             default:
                 break;

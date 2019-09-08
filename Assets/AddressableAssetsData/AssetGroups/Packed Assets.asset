@@ -10,14 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Remote
+  m_Name: Packed Assets
   m_EditorClassIdentifier: 
-  m_GroupName: Remote
+  m_GroupName: Packed Assets
   m_Data:
     m_SerializedData: []
-  m_GUID: 7b25677a8c2c64749bc3269150b83c6a
-  m_SerializeEntries: []
+  m_GUID: f46e348d0f2f10347b8509df91edbe48
+  m_SerializeEntries:
+  - m_GUID: a051ce8cbd903b04996ae53f95f4dea8
+    m_Address: ProductAssets
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 58c53497c4d162842b7f932ff3b00c7f, type: 2}
   m_SchemaSet:
-    m_Schemas: []
+    m_Schemas:
+    - {fileID: 11400000, guid: 3d5147f6ee959d04b8f636b5c711a2de, type: 2}
+    - {fileID: 11400000, guid: c9f1457e1f883e042b2903fcf34a2813, type: 2}

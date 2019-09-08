@@ -17,7 +17,7 @@ public class MsgMediator : MobiusMediator
         Debug.LogWarning("OnRegister");
         view.viewInteractSignal.AddListener(OnViewInteract);
 
-        view.ShowMsg("OnRegister");
+        view.ShowMsg(windowModel.GetOpenWindowData(WindowEnum.MsgWindow).ToString());
     }
 
     private void OnViewInteract(string type1, GameObject type2)

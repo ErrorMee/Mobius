@@ -7,13 +7,17 @@ using UnityEngine.UI;
 
 public class WindowService : MonoService
 {
+
+    [Inject]
+    public WindowServiceReadySignal windowServiceReadySignal { get; set; }
+    [Inject]
+    public WindowModel windowModel { get; set; }
+
     [SerializeField]
     private Transform m_CanvasRoot = null;
     [SerializeField]
     private WindowGroupInfo[] m_WindowGroupInfos = null;
-    [Inject]
-    public WindowServiceReadySignal windowServiceReadySignal { get; set; }
-
+    
     private static ushort VIEW_GROUP_DEPTH_FACTOR = 10000;
 
     private readonly Dictionary<int, WindowGroupComponent> m_WindowGroupComponents = new Dictionary<int, WindowGroupComponent>();
@@ -77,6 +81,8 @@ public class WindowService : MonoService
                 return;
             }
         }
+
+        windowModel.AddOpenWindowData(windowEnum, userData);
 
         string assetPath = AssetPathUtil.GetWindowAssetPath(config.AssetName);
 

@@ -21,6 +21,10 @@ public class GlobalContext : MobiusContext
     {
         Debug.Log("GlobalContext mapBindings");
         GlobalRoot globalRoot = (contextView as GameObject).GetComponent<GlobalRoot>();
+
+        //Model
+        injectionBinder.Bind<WindowModel>().ToSingleton();
+        
         //command
         commandBinder.Bind<StartSignal>().To<GlobalStartCommand>().Once();
         commandBinder.Bind<WindowServiceReadySignal>().To<WindowServiceReadyCommand>().Once();

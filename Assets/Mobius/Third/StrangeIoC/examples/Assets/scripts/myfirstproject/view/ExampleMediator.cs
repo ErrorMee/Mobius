@@ -29,8 +29,14 @@ namespace strange.examples.myfirstproject
 			
 			view.init ();
 		}
-		
-		public override void OnRemove()
+
+        public override void OnEnabled()
+        {
+            base.OnEnabled();
+            Debug.LogWarning("OnEnabled");
+        }
+
+        public override void OnRemove()
 		{
 			//Clean up listeners when the view is about to be destroyed
 			view.dispatcher.RemoveListener(ExampleView.CLICK_EVENT, onViewClicked);

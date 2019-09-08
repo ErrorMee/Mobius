@@ -3,11 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(WindowBaseView))]
+[DisallowMultipleComponent]
 public class MobiusMediator : Mediator
 {
     [Inject]
     public WindowService windowService { get; set; }
-    [HideInInspector]
+
+    [Inject]
+    public WindowModel windowModel { get; set; }
+
+    [ReadOnly]
     public WindowEnum windowEnum = WindowEnum.Undefined;
 
     public override void OnRegister()
